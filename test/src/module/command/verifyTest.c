@@ -1560,7 +1560,7 @@ testRun(void)
             .comment = "valid manifest copy - full");
 
         HRN_STORAGE_PUT_Z(
-            storageRepoWrite(), STORAGE_REPO_BACKUP  "/20201119-163000F/bundle/1", zNewFmt("XXX%s", fileContents),
+            storageRepoWrite(), STORAGE_REPO_BACKUP "/20201119-163000F/bundle/1", zNewFmt("XXX%s", fileContents),
             .comment = "valid file");
 
         // Create WAL file with just header info and small WAL size
@@ -1824,7 +1824,7 @@ testRun(void)
         TEST_TITLE("none output, verbose, override WAL magic, with no verify failures");
 
         hrnCfgArgRawZ(argList, cfgOptVerbose, "y");
-        hrnCfgArgRawZ(argList, cfgOptPgVersionForce, PG_VERSION_11_STR);
+        hrnCfgArgRawZ(argList, cfgOptPgVersionForce, PG_VERSION_11_Z);
         HRN_CFG_LOAD(cfgCmdVerify, argList);
         TEST_RESULT_STR_Z(
             verifyProcess(cfgOptionBool(cfgOptVerbose)),

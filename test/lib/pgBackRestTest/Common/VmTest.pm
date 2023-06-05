@@ -162,16 +162,15 @@ my $oyVm =
 
         &VM_DB =>
         [
-            PG_VERSION_10,
             PG_VERSION_11,
             PG_VERSION_12,
             PG_VERSION_13,
             PG_VERSION_14,
+            PG_VERSION_15,
         ],
 
         &VM_DB_TEST =>
         [
-            PG_VERSION_10,
             PG_VERSION_11,
             PG_VERSION_12,
             PG_VERSION_13,
@@ -193,7 +192,6 @@ my $oyVm =
 
         &VM_DB =>
         [
-            PG_VERSION_10,
             PG_VERSION_11,
             PG_VERSION_12,
             PG_VERSION_13,
@@ -262,13 +260,16 @@ my $oyVm =
             PG_VERSION_13,
             PG_VERSION_14,
             PG_VERSION_15,
+            PG_VERSION_16,
         ],
 
         &VM_DB_TEST =>
         [
             PG_VERSION_95,
             PG_VERSION_96,
+            PG_VERSION_10,
             PG_VERSION_15,
+            PG_VERSION_16,
         ],
     },
 };
@@ -342,7 +343,7 @@ sub vmValid
 push @EXPORT, qw(vmValid);
 
 ####################################################################################################################################
-# Which vm to use for the test matrix.  If one of the standard four, then use that, else use VM4.
+# Which vm to use for the test matrix. If one of the standard four, then use that, else use VM4.
 ####################################################################################################################################
 sub vmTest
 {
